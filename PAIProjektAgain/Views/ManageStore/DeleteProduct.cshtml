@@ -1,0 +1,61 @@
+﻿@model PAIProjektAgain.Models.Product
+
+@{
+    ViewData["Title"] = "DeleteProduct";
+}
+
+<h1>Czy na pewno chcesz to usunąć?</h1>
+
+<h3>@Model.Name</h3>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            Nazwa
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Name
+        </dd>
+        <dt class="col-sm-2">
+            Kategoria
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.Category == null)
+            {
+                <a>Brak</a>
+            }
+            else
+            {
+                <a>@Model.Category.Name</a>
+            }
+        <dt class="col-sm-2">
+            Opis
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Description
+        </dd>
+        <dt class="col-sm-2">
+            Cena
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Price zł
+        </dd>
+        <dt class="col-sm-2">
+            Ilość dostępnych
+        </dt>
+        <dd class="col-sm-10">
+            @Model.AvailableNumber
+        </dd>
+        <dt class="col-sm-2">
+            Zniżka
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Discount
+        </dd>
+    </dl>
+
+    <form asp-action="DeleteProduct">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Usuń" class="btn btn-danger" /> |
+        <a asp-action="Products">Powrót do listy</a>
+    </form>
+</div>

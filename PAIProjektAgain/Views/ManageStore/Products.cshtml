@@ -1,0 +1,40 @@
+﻿@model IEnumerable<PAIProjektAgain.Models.ProductViewModel>
+<a asp-action="AddProduct">Dodaj nowy produkt</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col"><b>Nazwa</b></th>
+            <th scope="col"><b>Kategoria</b></th>
+            <th scope="col"><b>Ilość na stanie</b></th>
+            <th scope="col"><b>Cena</b></th>
+            <th scope="col"><b>Zniżka</b></th>
+            <th scope="col"><b>Akcje</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>
+                    @i.Name
+                </td>
+                <td>
+                    @i.CategoryName
+                </td>
+                <td>
+                    @i.AvailableNumber
+                </td>
+                <td>
+                    @i.Price zł (@i.PriceAfterDiscount zł)
+                </td>
+                <td>
+                    @i.Discount%
+                </td>
+                <td>
+                    @Html.ActionLink("Edytuj", "EditProduct", new { id = i.Id }) |
+                    @Html.ActionLink("Usuń", "DeleteProduct", new { id = i.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

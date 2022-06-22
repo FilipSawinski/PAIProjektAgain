@@ -1,0 +1,28 @@
+﻿@model IEnumerable<PAIProjektAgain.Models.Category>
+<a asp-action="AddCategory">Dodaj nową kategorię</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col"><b>Nazwa</b></th>
+            <th scope="col"><b>Akcje</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>
+                    @i.Name
+                    @if (i.isPublic == false)
+                    {
+                        <span class="badge badge-pill badge-info">Ukryta</span>
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Edytuj", "EditCategory", new { id = i.Id }) |
+                    @Html.ActionLink("Usuń", "DeleteCategory", new { id = i.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

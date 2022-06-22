@@ -1,0 +1,15 @@
+﻿@model PAIProjektAgain.Models.AddPhotoViewModel
+<h1>Dodaj/zmień zdjęcie</h1>
+<form enctype="multipart/form-data" asp-action="AddPhoto" method="post">
+    <div class="form-group">
+        <label asp-for="photo"></label>
+        <input asp-for="photo" class="form-control-file" />
+        <span asp-validation-for="photo" class="text-danger"></span>
+    </div>
+    <div class="form-group row">
+        <div style="margin-top: 10px;">
+            <input type="submit" value="Zapisz" class="btn btn-primary" />
+        </div>
+    </div>
+
+</form>
