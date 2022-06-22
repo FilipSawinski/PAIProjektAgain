@@ -1,0 +1,11 @@
+﻿@model IEnumerable<PAIProjektAgain.Models.Category>
+
+@foreach (var i in Model)
+{
+    <div class="card border-dark mb-3" style="max-width: 20rem;">
+        <div class="card-body">
+            <h4 class="card-title">@i.Name</h4>
+            <a class="card-text">@Html.ActionLink("Przejdź do tej kategorii", "Index", new { search = i.Name })</a>
+        </div>
+    </div>
+}

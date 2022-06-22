@@ -1,0 +1,43 @@
+﻿@model PAIProjektAgain.Models.Product
+
+<h1>@Model.Name</h1>
+<h6>(@Model.Category.Name)</h6>
+<div class="img-wrap">
+    @if (string.IsNullOrEmpty(Model.photoPath))
+    {
+        <img style="margin-bottom: 10px; max-width: 400px; max-height: 400px" src="~/imgs/misc/no-image.png" />
+    }
+    else
+    {
+        <img style="margin-bottom: 10px; max-width: 400px; max-height: 400px" src="~/imgs/products/@Model.photoPath" />
+    }
+</div>
+<h4>Opis</h4>
+@Model.Description
+<h4 style="margin-top: 10px">Cena</h4>
+@if (Model.Discount > 0)
+{
+    <span class="discounted-price"> @(Model.Price-((float)Model.Discount/100*Model.Price)) zł</span>
+    <span class="crossed-price">@Model.Price zł</span>
+    <span class="discount">-@Model.Discount%</span>
+}
+else
+{
+    <span class="price">@Model.Price zł</span>
+}
+@if (User.Identity.IsAuthenticated)
+{
+    <form asp-action="BuyAsRegistered" asp-route-id="@Model.Id">
+        <div class="form-group">
+            <input type="submit" value="Kup jako zalogowany" class="btn btn-primary" />
+        </div>
+    </form>
+}
+else
+{
+    <form asp-action="BuyAsUnregistered" asp-route-id="@Model.Id" method="get">
+        <div class="form-group">
+            <input type="submit" value="Kup jako niezalogowany" class="btn btn-primary" />
+        </div>
+    </form>
+}

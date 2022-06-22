@@ -1,0 +1,36 @@
+﻿@model PAIProjektAgain.Models.BuyAsUnregisteredViewModel
+
+<h1>Zakup produktu</h1>
+
+<h4>@Model.prod.Name</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="BuyAsUnregistered" method="post">
+            <div class="form-group">
+                <label asp-for="Adress"></label>
+                <input asp-for="Adress" class="form-control" />
+                <span asp-validation-for="Adress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zipcode"></label>
+                <input asp-for="Zipcode" class="form-control" />
+                <span asp-validation-for="Zipcode" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="prodId" />
+            @if (Model.prod.Discount > 0)
+            {
+                <span class="discounted-price"> @(Model.prod.Price-((float)Model.prod.Discount/100*Model.prod.Price)) zł</span>
+                <span class="crossed-price">@Model.prod.Price zł</span>
+                <span class="discount">-@Model.prod.Discount%</span>
+            }
+            else
+            {
+                <span class="price">@Model.prod.Price zł</span>
+            }
+            <div class="form-group">
+                <input type="submit" value="Przejdź do płatności" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
