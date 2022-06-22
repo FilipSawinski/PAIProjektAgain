@@ -392,3 +392,8 @@ D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\
 D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\ref\PAIProjektAgain.dll
 D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\PAIProjektAgain.pdb
 D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\PAIProjektAgain.genruntimeconfig.cache
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\Admin\Deleteuser.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\Admin\Edituser.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\Admin\Manageroles.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\Admin\Users.cshtml.g.cs

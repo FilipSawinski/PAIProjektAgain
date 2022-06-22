@@ -13,5 +13,8 @@ namespace PAIProjektAgain.Data
             : base(options)
         {
         }
+        public DbSet<Category> Category { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }
