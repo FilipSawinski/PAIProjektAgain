@@ -1,0 +1,16 @@
+﻿@model PWSWv3.Models.AnswerTicketViewModel
+
+<h4>@Model.Name</h4>
+<h3>@Model.Description</h3>
+
+<form asp-action="AnswerTicket">
+    <div class="form-group">
+        <label asp-for="Answer" class="control-label"></label>
+        <input asp-for="Answer" class="form-control" />
+        <span asp-validation-for="Answer" class="text-danger"></span>
+    </div>
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<PWSWv3.Models.Ticket>
+<a asp-action="AddTicket">Dodaj nowe zgłoszenie</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col"><b>Nazwa</b></th>
+            <th scope="col"><b>Status</b></th>
+            <th scope="col"><b>Akcje</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>
+                    @i.Name
+                </td>
+                <td>
+                    @if (i.isClosed == false)
+                    {
+                        <a>W realizacji</a>
+                    }
+                    else
+                    {
+                        <a>Zrealizowane</a>
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Podgląd", "ViewTicket", new { id = i.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

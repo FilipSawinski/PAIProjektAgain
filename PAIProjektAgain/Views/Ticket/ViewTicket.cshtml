@@ -1,0 +1,14 @@
+﻿@model PWSWv3.Models.Ticket
+
+<h2>Zgłoszenie: @Model.Name</h2>
+<h3>@Model.Description</h3>
+@if (string.IsNullOrEmpty(Model.Answer))
+{
+    <h4 style="margin-top: 20px">Brak odpowiedzi</h4>
+}
+else
+{
+    <h4 style="margin-top: 20px">(Od @Model.Realizator.UserName)</h4>
+    <h3>@Model.Answer</h3>
+}
+@Html.ActionLink("Powrót", "MyTickets");
