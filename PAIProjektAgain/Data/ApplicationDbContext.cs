@@ -16,5 +16,6 @@ namespace PAIProjektAgain.Data
         public DbSet<Category> Category { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
     }
 }

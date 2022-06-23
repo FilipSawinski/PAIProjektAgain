@@ -397,3 +397,17 @@ D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\
 D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
 D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\Admin\Manageroles.cshtml.g.cs
 D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\Admin\Users.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\ManageStore\AddCategory.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\ManageStore\AddPhoto.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\ManageStore\AddProduct.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\ManageStore\Categories.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\ManageStore\DeleteCategory.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\ManageStore\DeleteProduct.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\ManageStore\EditCategory.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\ManageStore\EditProduct.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\ManageStore\Products.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\Store\Buy.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\Store\BuyAsUnregistered.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\Store\Index.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\Store\Kategorie.cshtml.g.cs
+D:\Dokumenty\GitHub\PAIProjektCorrect\PAIProjektAgain\PAIProjektAgain\obj\Debug\net5.0\Razor\Views\Store\ThankYou.cshtml.g.cs
