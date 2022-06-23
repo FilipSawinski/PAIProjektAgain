@@ -1,0 +1,31 @@
+﻿@model PAIProjektAgain.Models.Order
+
+<h3>Przegląd zamówienia</h3>
+<h4>Numer: @Model.Id</h4>
+<br />
+<h4>Zamawiane produkty:</h4>
+@foreach (var p in Model.ProductList)
+{
+    <a>@p.Name - @p.Price zł</a>
+    <br />
+}
+<a>Po uwzględnieniu zniżek dostępnych w czasie wykonania zamówienia, zapłaciłeś łącznie <b>@Model.Price zł</b></a>
+<h4 style="margin-top: 20px">Status zamówienia:</h4>
+@if (Model.Status == "Ordered")
+{
+    <a>Zamówienie zostało przyjęte</a>
+}
+else if (Model.Status == "Claimed")
+{
+    <a>Właśnie pracujemy nad twoim zamówieniem w naszym punkcie</a>
+}
+else
+{
+    <a>Zamówienie zostało wysłane</a>
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <br />
+    @Html.ActionLink("Powrót do moich zamówień", "MyOrders")
+}

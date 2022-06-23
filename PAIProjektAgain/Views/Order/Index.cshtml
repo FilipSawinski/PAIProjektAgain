@@ -1,0 +1,61 @@
+﻿@model IEnumerable<PAIProjektAgain.Models.Order>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col"><b>Id</b></th>
+            <th scope="col"><b>Cena</b></th>
+            <th scope="col"><b>Adres</b></th>
+            <th scope="col"><b>Data zamówienia</b></th>
+            <th scope="col"><b>Status</b></th>
+            <th scope="col"><b>Realizator</b></th>
+            <th scople="col"><b>Akcje</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.Id</td>
+                <td>@i.Price</td>
+                <td>@i.Adress @i.Zipcode</td>
+                <td>@i.purchaseDateTime</td>
+                <td>
+                    @if (i.Status == "Ordered")
+                    {
+                        <a>Zamówione</a>
+                    }
+                    else if (i.Status == "Claimed")
+                    {
+                        <a>W trakcie realizacji</a>
+                    }
+                    else if (i.Status == "Shipped")
+                    {
+                        <a>Wysłane</a>
+                    }
+                </td>
+                <td>
+                    @if (i.Realizator == null)
+                    {
+                        <a>Nikt</a>
+                    }
+                    else
+                    {
+                        <a>@i.Realizator.Email</a>
+                    }
+                </td>
+                <td>
+                    @if (i.Realizator == null)
+                    {
+                        @Html.ActionLink("Przyjmij", "ClaimOrAdvance", new { id = i.Id })
+                    }
+                    else if (i.Status == "Claimed")
+                    {
+                        @Html.ActionLink("Ukończ", "ClaimOrAdvance", new { id = i.Id })
+                    }
+                    @Html.ActionLink("Podgląd", "SearchById", new { id = i.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
