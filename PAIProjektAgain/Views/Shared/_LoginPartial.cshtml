@@ -6,12 +6,10 @@
     @if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+            <a class="nav-link" asp-controller="Ticket" asp-action="MyTickets">Zgłoszenia</a>
         </li>
         <li class="nav-item">
-            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-            </form>
+            <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@User.Identity.Name</a>
         </li>
         @if (User.IsInRole("Administrator"))
         {
@@ -19,17 +17,52 @@
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" asp-controller="Admin" asp-action="Users" role="button" aria-haspopup="true" aria-expanded="false">Panel administracyjny</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" asp-controller="Admin" asp-action="Users">Użytkownicy</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" asp-controller="ManageStore" asp-action="Categories">Kategorie produktów</a>
+                    <a class="dropdown-item" asp-controller="ManageStore" asp-action="Products">Produkty</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" asp-controller="Order" asp-action="Index">Zamówienia</a>
+                    <a class="dropdown-item" asp-controller="Ticket" asp-action="Index">Zgłoszenia</a>
                 </div>
             </li>
         }
+        else if (User.IsInRole("Kierownik"))
+        {
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" asp-controller="ManageStore" asp-action="Categories" role="button" aria-haspopup="true" aria-expanded="false">Panel kierowniczy</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" asp-controller="ManageStore" asp-action="Categories">Kategorie produktów</a>
+                    <a class="dropdown-item" asp-controller="ManageStore" asp-action="Products">Produkty</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" asp-controller="Order" asp-action="Index">Zamówienia</a>
+                    <a class="dropdown-item" asp-controller="Ticket" asp-action="Index">Zgłoszenia</a>
+                </div>
+            </li>
+        }
+        else if (User.IsInRole("Sprzedawca"))
+        {
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" asp-controller="Order" asp-action="Index" role="button" aria-haspopup="true" aria-expanded="false">Panel sprzedawcy</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" asp-controller="Order" asp-action="Index">Zamówienia</a>
+                    <a class="dropdown-item" asp-controller="Ticket" asp-action="Index">Zgłoszenia</a>
+                </div>
+            </li>
+        }
+        <li class="nav-item">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="nav-link btn">Wyloguj</button>
+            </form>
+        </li>
+
     }
     else
     {
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">Zarejestruj</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Zaloguj</a>
         </li>
     }
 </ul>
