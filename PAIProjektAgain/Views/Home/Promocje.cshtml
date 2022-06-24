@@ -1,0 +1,42 @@
+﻿@model IEnumerable<PAIProjektAgain.Models.Product>
+
+<h1>Promocje</h1>
+<div class="prod-container">
+    @foreach (var m in Model)
+    {
+        <a asp-controller="Store" asp-action="Buy" asp-route-id="@m.Id">
+            <div class="product-card">
+                <div class="image-prod">
+                    <div class="img-wrap">
+                        @if (string.IsNullOrEmpty(m.photoPath))
+                        {
+                            <img src="~/imgs/misc/no-image.png" />
+                        }
+                        else
+                        {
+                            <img src="~/imgs/products/@m.photoPath" />
+                        }
+                    </div>
+                </div>
+                <div class="prod-header">
+                    <h5>@m.Name</h5>
+                    <h6>@m.Description</h6>
+                </div>
+                @if (m.Discount > 0)
+                {
+                    <div class="price-prod">
+                        <p class="discounted-price">@(m.Price-(((float)m.Discount/100)*m.Price)) zł</p>
+                        <p class="crossed-price">@m.Price zł</p>
+                        <p class="discount">-@m.Discount%</p>
+                    </div>
+                }
+                else
+                {
+                    <div class="price-prod">
+                        <p class="price">@m.Price zł</p>
+                    </div>
+                }
+            </div>
+        </a>
+    }
+</div>
