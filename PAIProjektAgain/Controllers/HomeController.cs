@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using PAIProjektAgain.Data;
 using PAIProjektAgain.Models;
 using System;
 using System.Collections.Generic;
@@ -12,17 +14,28 @@ namespace PAIProjektAgain.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
         {
             _logger = logger;
+            _db = db;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var model = _db.Products.Where(c => c.isHighlighted).ToList();
+
+            return View(model);
         }
 
+        public async Task<ActionResult> Promocje()
+        {
+            var model = _db.Products.Include(c => c.Category)
+                .Where(d => d.Discount > 0 && d.Category.isPublic == true)
+                .ToList();
+            return View(model);
+        }
         public IActionResult Privacy()
         {
             return View();
